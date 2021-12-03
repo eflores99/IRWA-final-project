@@ -1,4 +1,7 @@
-# IRWA Final Project - Search Engine with Web Analytics
+# Search Engine with Web Analytics - skeleton project
+# IRWA Final Project
+
+This projects contains the startup Flask files for developing a web application.
 
 ## Starting the Web App
 
