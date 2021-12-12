@@ -1,4 +1,5 @@
 import datetime
+import json
 from random import random
 
 from faker import Faker
@@ -26,24 +27,19 @@ def get_random_date_in(start, end):
         seconds=random.randint(0, int((end - start).total_seconds())), )
 
 
-class Document:
-    def __init__(self, id, title, description, doc_date, email, ip):
-        self.id = id
-        self.title = title
-        self.description = description
-        self.doc_date = doc_date
-        self.email = email
-        self.ip = ip
+def load_json_file(path):
+    """Load JSON content from file in 'path'
 
+    Parameters:
+    path (string): the file path
 
-def load_documents_corpus():
-    """
-    Load documents corpus from dataset_tweets_WHO.txt file
-    :return:
+    Returns:
+    JSON: a JSON object
     """
 
-    ##### demo replace ith your code here #####
-    docs = []
-    for i in range(200):
-        docs.append(Document(fake.uuid4(), fake.text(), fake.text(), fake.date_this_year(), fake.email(), fake.ipv4()))
-    return docs
+    # Load the file into a unique string
+    with open(path) as fp:
+        text_data = fp.readlines()[0]
+    # Parse the string into a JSON object
+    json_data = json.loads(text_data)
+    return json_data
