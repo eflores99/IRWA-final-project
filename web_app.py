@@ -43,9 +43,9 @@ full_path = os.path.realpath(__file__)
 path, filename = os.path.split(full_path)
 # print(path + ' --> ' + filename + "\n")
 # load documents corpus into memory.
-file_path = path + "/tweets-data-who.json"
+file_path = path + "/dataset_tweets_WHO.txt"
 
-# file_path = "../../tweets-data-who.json"
+# file_path = "../../dataset_tweets_WHO.txt"
 corpus = load_corpus(file_path)
 print("loaded corpus. first elem:", list(corpus.values())[0])
 
